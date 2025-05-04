@@ -1,0 +1,72 @@
+.HeroContainer {
+  position: relative; /* Make sure the container can position the pseudo-element */
+  background-image: url("../../../assets/Hero-Background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 555px;
+  width: 100%;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 94px;
+}
+
+.HeroContainer::before {
+  content: ""; /* Necessary to create the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black color with 50% opacity */
+  border-radius: 24px; /* Ensure the overlay matches the container's rounded corners */
+  z-index: 1; /* Place it behind the content */
+}
+
+.HeroContainer > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+.HeroContent {
+  height: 294px;
+  width: 832px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.HeroContent .text {
+  text-align: center;
+  color: #fff;
+}
+.HeroContent .text h1 {
+  font-size: 54px;
+  line-height: 80px;
+}
+.HeroContent .text h1 span {
+  color: #4a89dc;
+}
+.HeroContent .text p {
+  font-size: 18px;
+  line-height: 26px;
+}
+.HeroContent .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+@media screen and (max-width: 768px) {
+  .HeroContainer {
+    height: 520px;
+  }
+  .HeroContent .text h1 {
+    font-size: 32px;
+    line-height: 46px;
+  }
+  .HeroContent {
+    width: 80vw;
+  }
+}

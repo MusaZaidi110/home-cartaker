@@ -1,0 +1,178 @@
+.VendorFormJoin {
+  margin-top: 94px;
+  display: flex;
+  gap: 18px;
+  overflow-x: hidden;
+}
+.VendorFormJoin .FormSection {
+  display: flex;
+  flex: 2;
+  padding: 39px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+.VendorFormJoin .FormSection .FormText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.VendorFormJoin .FormSection h1 {
+  color: #1a191b;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80%; /* 48.3px */
+  letter-spacing: -1.84px;
+  text-transform: capitalize;
+}
+.VendorFormJoin .FormSection h1 span {
+  color: #4a89dc;
+}
+.VendorFormJoin .FormSection p {
+  color: #545252;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+}
+
+.VendorFormJoin .FormContentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 18px;
+}
+.VendorFormJoin .FormContentSection .twoinputs {
+  display: flex;
+  width: 100%;
+  gap: 14px;
+}
+
+.VendorFormJoin .FormContentSection .button{
+  display: flex;
+  justify-content: flex-end;
+}
+.VendorFormJoin .FormContentSection .button button{
+  width: 200px;
+}
+.Toastify__close-button{
+  width: fit-content !important;
+  background: transparent !important;
+}
+.Toastify__close-button:hover{
+  border: none !important;
+  transform: translateY(0px) !important;
+}
+.VendorFormJoin .FormContentSection .button button:hover{
+  color: #fff !important;
+  background-color: #5797ea;
+}
+
+.VendorFormJoin .ImageSection {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: url("../../../../assets/vendorImg.jpg") 50% / cover no-repeat;
+  position: relative;
+  overflow: hidden; /* Ensures content doesn't spill outside */
+}
+
+.VendorFormJoin .ImageSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay with higher opacity */
+  border-radius: 24px;
+  z-index: 1; /* Below content */
+}
+
+.VendorFormJoin .ImageContentSection {
+  position: relative; /* Allows content to stay above the overlay */
+  z-index: 2; /* Higher than the overlay */
+  padding: 20px;
+  text-align: center;
+  height: fit-content;
+  background-color: #ffffff40;
+  border: 1px solid #fff;
+  border-radius: 22px;
+}
+
+.VendorFormJoin .ImageContentSection h1 {
+  color: #fff;
+  font-size: 24px;
+  width: 72%;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.84px;
+  text-transform: capitalize;
+}
+
+.VendorFormJoin .ImageContentSection h1 span {
+  color: #4a89dc;
+}
+
+.VendorFormJoin .ImageContentSection p {
+  color: #fff;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 10px;
+}
+.VendorFormJoin button {
+  background-color: #4a89dc;
+}
+
+.subcription{
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.subcription img{
+  position: absolute;
+  width: 300px;
+  height: 320px;
+  z-index: 7;
+  transform: rotate(22deg);
+  top: 0;
+  left: auto;
+  right: 50px;
+}
+.subcription span{
+  position: absolute;
+  color: rgba(199, 29, 45, 1);
+  font-weight: 700;
+  font-size: 26px;
+  z-index: 9;
+  top: 129px;
+  right: 101px;
+  transform: rotate(22deg);
+}
+
+@media screen and (max-width: 768px) {
+  .VendorFormJoin .FormSection h1 {
+    font-size: 28px;
+  }
+  .VendorFormJoin .FormSection p {
+    font-size: 12px;
+  }
+  .VendorFormJoin {
+    flex-direction: column;
+  }
+  .VendorFormJoin .ImageSection {
+    max-width: 100%;
+  }
+}

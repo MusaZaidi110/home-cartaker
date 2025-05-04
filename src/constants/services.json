@@ -1,0 +1,492 @@
+{
+  "mainCategories": [
+    {
+      "id": 1,
+      "name": "Plumbing & Water Services",
+      "icon": "faWrench",
+      "description": "Professional solutions for all water and plumbing needs",
+      "services": [
+        {
+          "id": 101,
+          "name": "Drain Cleaning/Unclogging",
+          "description": "Expert drain unclogging using advanced tools"
+        },
+        {
+          "id": 102,
+          "name": "Pipe Leakage Repair",
+          "description": "Detection and repair of pipe leaks"
+        },
+        {
+          "id": 103,
+          "name": "Tap/Faucet Installation & Repair",
+          "description": "Faucet services including installation and maintenance"
+        },
+        {
+          "id": 104,
+          "name": "Water Tank Cleaning",
+          "description": "Complete water tank sanitization"
+        },
+        {
+          "id": 105,
+          "name": "RO/Water Purifier Installation",
+          "description": "Professional installation of water purification systems"
+        },
+        {
+          "id": 106,
+          "name": "Shower & Geyser Repair",
+          "description": "Repair and maintenance services"
+        },
+        {
+          "id": 107,
+          "name": "Sewage Line Cleaning",
+          "description": "Complete sewage system maintenance"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Electrical Services",
+      "icon": "faBolt",
+      "description": "Safe and reliable electrical solutions",
+      "services": [
+        {
+          "id": 201,
+          "name": "Wiring & Switchboard Repair",
+          "description": "Complete electrical wiring solutions"
+        },
+        {
+          "id": 202,
+          "name": "Fan/Light Installation",
+          "description": "Installation and repair services"
+        },
+        {
+          "id": 203,
+          "name": "Inverter/UPS Installation",
+          "description": "Backup power solutions"
+        },
+        {
+          "id": 204,
+          "name": "Smart Home Setup",
+          "description": "Wi-Fi, CCTV and home automation"
+        },
+        {
+          "id": 205,
+          "name": "AC/Refrigerator Repair",
+          "description": "Appliance repair services"
+        },
+        {
+          "id": 206,
+          "name": "Electrical Safety Inspection",
+          "description": "Complete home electrical audit"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cleaning & Pest Control",
+      "icon": "faBroom",
+      "description": "Spotless cleaning and pest elimination",
+      "services": [
+        {
+          "id": 301,
+          "name": "Deep Home Cleaning",
+          "description": "Thorough whole-house cleaning"
+        },
+        {
+          "id": 302,
+          "name": "Office Cleaning",
+          "description": "Commercial space maintenance"
+        },
+        {
+          "id": 303,
+          "name": "Sofa/Carpet Cleaning",
+          "description": "Specialized fabric cleaning"
+        },
+        {
+          "id": 304,
+          "name": "Pest Control",
+          "description": "Cockroach, termite and rodent control"
+        },
+        {
+          "id": 305,
+          "name": "Disinfection Services",
+          "description": "Sanitization for health safety"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Painting & Renovation",
+      "icon": "faPaintRoller",
+      "description": "Transforming your living spaces",
+      "services": [
+        {
+          "id": 401,
+          "name": "Wall Painting",
+          "description": "Interior/exterior painting services"
+        },
+        {
+          "id": 402,
+          "name": "Furniture Painting",
+          "description": "Wood finishing and restoration"
+        },
+        {
+          "id": 403,
+          "name": "Waterproofing",
+          "description": "Leak-proofing solutions"
+        },
+        {
+          "id": 404,
+          "name": "Wallpaper Installation",
+          "description": "Professional wallpapering"
+        },
+        {
+          "id": 405,
+          "name": "Ceiling Design",
+          "description": "POP and decorative ceilings"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Carpentry & Furniture",
+      "icon": "faHammer",
+      "description": "Custom woodwork and repairs",
+      "services": [
+        {
+          "id": 501,
+          "name": "Furniture Repair",
+          "description": "Door, chair and table repairs"
+        },
+        {
+          "id": 502,
+          "name": "Custom Furniture",
+          "description": "Made-to-order woodwork"
+        },
+        {
+          "id": 503,
+          "name": "Modular Kitchen",
+          "description": "Kitchen design and installation"
+        },
+        {
+          "id": 504,
+          "name": "Wardrobe Installation",
+          "description": "Custom closet solutions"
+        },
+        {
+          "id": 505,
+          "name": "Flooring",
+          "description": "Wooden and laminate floors"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Appliance Repair",
+      "icon": "faToolbox",
+      "description": "Fix your home appliances",
+      "services": [
+        {
+          "id": 601,
+          "name": "Kitchen Appliance Repair",
+          "description": "Microwave, chimney services"
+        },
+        {
+          "id": 602,
+          "name": "Washing Machine Repair",
+          "description": "All brand servicing"
+        },
+        {
+          "id": 603,
+          "name": "Refrigerator/AC Repair",
+          "description": "Cooling system maintenance"
+        },
+        {
+          "id": 604,
+          "name": "TV & Home Theater",
+          "description": "Entertainment system setup"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Personal Care & Wellness",
+      "icon": "faSpa",
+      "description": "At-home wellness services",
+      "services": [
+        {
+          "id": 701,
+          "name": "At-Home Salon",
+          "description": "Haircut, facial, waxing"
+        },
+        {
+          "id": 702,
+          "name": "Massage Therapy",
+          "description": "Ayurvedic and spa treatments"
+        },
+        {
+          "id": 703,
+          "name": "Physiotherapy",
+          "description": "Professional care at home"
+        },
+        {
+          "id": 704,
+          "name": "Yoga Trainer",
+          "description": "Personal fitness sessions"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Laundry & Clothing",
+      "icon": "faTshirt",
+      "description": "Fabric care solutions",
+      "services": [
+        {
+          "id": 801,
+          "name": "Wash & Ironing",
+          "description": "Pickup and delivery service"
+        },
+        {
+          "id": 802,
+          "name": "Dry Cleaning",
+          "description": "Special garment care"
+        },
+        {
+          "id": 803,
+          "name": "Tailoring",
+          "description": "Alterations and stitching"
+        },
+        {
+          "id": 804,
+          "name": "Shoe Repair",
+          "description": "Footwear maintenance"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Vehicle Services",
+      "icon": "faCar",
+      "description": "Automotive care at home",
+      "services": [
+        {
+          "id": 901,
+          "name": "Car/Bike Washing",
+          "description": "At-home vehicle cleaning"
+        },
+        {
+          "id": 902,
+          "name": "Vehicle Servicing",
+          "description": "On-demand maintenance"
+        },
+        {
+          "id": 903,
+          "name": "Tyre Services",
+          "description": "Puncture repair and replacement"
+        },
+        {
+          "id": 904,
+          "name": "Car Detailing",
+          "description": "Premium polishing service"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Pet Care Services",
+      "icon": "faPaw",
+      "description": "Care for your furry friends",
+      "services": [
+        {
+          "id": 1001,
+          "name": "Pet Grooming",
+          "description": "Bathing and trimming"
+        },
+        {
+          "id": 1002,
+          "name": "Veterinary Visits",
+          "description": "At-home pet healthcare"
+        },
+        {
+          "id": 1003,
+          "name": "Pet Training",
+          "description": "Behavioral training"
+        },
+        {
+          "id": 1004,
+          "name": "Pet Supplies",
+          "description": "Food and accessories delivery"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Event Services",
+      "icon": "faCalendarAlt",
+      "description": "Make your events special",
+      "services": [
+        {
+          "id": 1101,
+          "name": "Party Decoration",
+          "description": "Home event styling"
+        },
+        {
+          "id": 1102,
+          "name": "Photography",
+          "description": "Professional shoots"
+        },
+        {
+          "id": 1103,
+          "name": "Catering",
+          "description": "Food and beverage service"
+        },
+        {
+          "id": 1104,
+          "name": "Tent Rental",
+          "description": "Event furniture hire"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Moving & Shifting",
+      "icon": "faTruckMoving",
+      "description": "Stress-free relocation",
+      "services": [
+        {
+          "id": 1201,
+          "name": "Packers & Movers",
+          "description": "Local and intercity"
+        },
+        {
+          "id": 1202,
+          "name": "Furniture Assembly",
+          "description": "Setup and disassembly"
+        },
+        {
+          "id": 1203,
+          "name": "Vehicle Rental",
+          "description": "Shifting transport"
+        },
+        {
+          "id": 1204,
+          "name": "Storage Solutions",
+          "description": "Short and long-term"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Tech Services",
+      "icon": "faLaptop",
+      "description": "Digital solutions at home",
+      "services": [
+        {
+          "id": 1301,
+          "name": "Device Repair",
+          "description": "Mobile and laptop fixes"
+        },
+        {
+          "id": 1302,
+          "name": "TV Installation",
+          "description": "Smart TV setup"
+        },
+        {
+          "id": 1303,
+          "name": "Wi-Fi Setup",
+          "description": "Network installation"
+        },
+        {
+          "id": 1304,
+          "name": "Data Recovery",
+          "description": "File retrieval services"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Tutoring",
+      "icon": "faChalkboardTeacher",
+      "description": "Home education services",
+      "services": [
+        {
+          "id": 1401,
+          "name": "Academic Tuition",
+          "description": "School subjects"
+        },
+        {
+          "id": 1402,
+          "name": "Online Classes",
+          "description": "Music, dance, coding"
+        },
+        {
+          "id": 1403,
+          "name": "Language Training",
+          "description": "Spoken and written"
+        },
+        {
+          "id": 1404,
+          "name": "Exam Preparation",
+          "description": "Test coaching"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Gardening",
+      "icon": "faLeaf",
+      "description": "Green space solutions",
+      "services": [
+        {
+          "id": 1501,
+          "name": "Garden Setup",
+          "description": "New garden creation"
+        },
+        {
+          "id": 1502,
+          "name": "Lawn Care",
+          "description": "Mowing and maintenance"
+        },
+        {
+          "id": 1503,
+          "name": "Vertical Gardens",
+          "description": "Space-saving solutions"
+        },
+        {
+          "id": 1504,
+          "name": "Plant Care",
+          "description": "Fertilization and pest control"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Health Services",
+      "icon": "faAmbulance",
+      "description": "Medical care at home",
+      "services": [
+        {
+          "id": 1601,
+          "name": "Ambulance",
+          "description": "Emergency transport"
+        },
+        {
+          "id": 1602,
+          "name": "Doctor Visits",
+          "description": "At-home consultations"
+        },
+        {
+          "id": 1603,
+          "name": "Medical Equipment",
+          "description": "Rental services"
+        },
+        {
+          "id": 1604,
+          "name": "Elderly Care",
+          "description": "Nursing and support"
+        }
+      ]
+    }
+  ]
+}

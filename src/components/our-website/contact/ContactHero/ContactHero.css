@@ -1,0 +1,56 @@
+.ContactHeroContainer {
+  position: relative;
+  background-image: url("../../../../assets/AboutHero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 455px;
+  width: 100%;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 94px;
+}
+
+.ContactHeroContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.ContactHeroContainer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.ContactHeroContent {
+  height: 170px;
+  width: 832px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ContactHeroContent .text {
+  text-align: center;
+}
+
+.ContactHeroContent .text h1 {
+  font-size: 60px;
+  line-height: 80px;
+  color: #4a89dc;
+}
+
+.ContactHeroContent .text p {
+  font-size: 18px;
+  line-height: 26px;
+  color: #fff;
+}

@@ -1,0 +1,141 @@
+.AskedQuestion {
+  display: flex;
+  padding: 61px 51px;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  align-self: stretch;
+  border-radius: 24px;
+  border: 1px solid #1e1e1e;
+  background: url("../../../../assets/faq-background.jpg") #000 repeat;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Dark overlay - fixed implementation */
+.AskedQuestion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  z-index: -1;
+}
+
+/* Content containers */
+.AskedTextSection,
+.accordions {
+  position: relative;
+}
+
+/* Text styles - adjusted for overlay */
+.AskedQuestion .AskedTextSection {
+  width: 722px;
+  height: 122px;
+  margin: 0 auto;
+}
+
+.AskedQuestion .AskedTextSection h1 {
+  color: #fff; /* Changed to white for better contrast */
+  font-size: 46px;
+  line-height: 66px;
+  text-align: center;
+}
+
+.AskedQuestion .AskedTextSection span {
+  color: #4a89dc;
+}
+
+.AskedQuestion .AskedTextSection p {
+  color: rgba(255, 255, 255, 0.9); /* Lighter text for readability */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* Accordion styles */
+.accordions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion {
+  border-radius: 14px !important;
+  border: 2px solid #4a89dc !important;
+  background: #fff !important;
+  margin-bottom: 30px !important;
+  overflow: hidden; /* Ensures rounded corners */
+}
+
+.accordions .accordionSummary {
+  padding: 16px !important;
+}
+.accordion .accordionSummary:hover{
+  transform: translateY(0px) !important;
+  border: none !important;
+}
+
+.accordionHeading {
+  color: #1e1e1e !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 28px !important;
+  margin: 0 !important;
+}
+
+.accordionText {
+  color: #545252 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 30px !important;
+  padding: 0 16px 16px !important;
+}
+
+.accordion-icon {
+  background-color: #fff !important ;
+  color: #4a89dc !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .AskedQuestion {
+    padding: 30px 12px;
+    gap: 30px;
+  }
+  
+  .AskedQuestion .AskedTextSection {
+    width: 100%;
+    height: auto;
+  }
+  
+  .AskedQuestion .AskedTextSection h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  
+  .accordions .accordionSummary {
+    padding: 12px !important;
+  }
+  
+  .accordionHeading {
+    font-size: 18px !important;
+  }
+  
+  .accordionText {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+}

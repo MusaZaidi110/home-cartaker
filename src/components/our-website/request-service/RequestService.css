@@ -1,0 +1,209 @@
+.RequestFormJoin {
+  margin-top: 94px;
+  display: flex;
+  gap: 18px;
+  overflow-x: hidden !important;
+}
+.RequestFormJoin .FormSection {
+  display: flex;
+  flex: 2;
+  padding: 39px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+.RequestFormJoin .FormSection .FormText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.RequestFormJoin .FormSection h1 {
+  color: #1a191b;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80%; /* 48.3px */
+  letter-spacing: -1.84px;
+  text-transform: capitalize;
+}
+.RequestFormJoin .FormSection h1 span {
+  color: #4a89dc;
+}
+.RequestFormJoin .FormSection p {
+  color: #545252;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+}
+
+.RequestFormJoin .FormContentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 18px;
+}
+.RequestFormJoin .FormContentSection .twoinputs {
+  display: flex;
+  width: 100%;
+  gap: 14px;
+}
+
+.RequestFormJoin .FormContentSection .button {
+  display: flex;
+  justify-content: flex-end;
+}
+.RequestFormJoin .FormContentSection .button button {
+  width: 200px;
+}
+.Toastify__close-button {
+  width: fit-content !important;
+  background: transparent !important;
+}
+.Toastify__close-button:hover {
+  border: none !important;
+  transform: translateY(0px) !important;
+}
+.RequestFormJoin .FormContentSection .button button:hover {
+  color: #fff !important;
+  background-color: #acbfff;
+}
+
+.RequestFormJoin .ImageSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: url("../../../assets/vendorImg.jpg") 50% / cover no-repeat;
+  position: relative;
+  overflow: hidden; /* Ensures content doesn't spill outside */
+}
+
+.RequestFormJoin .ImageSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay with higher opacity */
+  border-radius: 24px;
+  z-index: 1; /* Below content */
+}
+
+.user-welcome-section {
+  margin-inline: auto;
+  color: #333;
+  z-index: 9;
+}
+
+.user-welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.user-welcome-section h1 span {
+  color: #4a89dc; /* Your brand color */
+}
+
+.cta-container {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #4a89dc;
+}
+
+.cta-text {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #4a89dc;
+  font-weight: 600;
+}
+
+.benefits-list {
+  margin: 1rem 0 1.5rem 1rem;
+  padding-left: 1rem;
+}
+
+.benefits-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  list-style-type: none;
+}
+
+.benefits-list li:before {
+  content: "✓";
+  color: #4a89dc;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.signup-button {
+  display: inline-block;
+  background-color: #4a89dc;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin: 1rem 0;
+}
+
+.signup-button:hover {
+  background-color: #3a6cb5;
+}
+
+.loyalty-text {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 1rem;
+}
+
+.RequestFormJoin button {
+  background-color: #4a89dc;
+}
+
+@media screen and (max-width: 768px) {
+  .RequestFormJoin .FormSection h1 {
+    font-size: 28px;
+  }
+  .RequestFormJoin .FormSection p {
+    font-size: 12px;
+  }
+  .RequestFormJoin {
+    flex-direction: column;
+  }
+  .RequestFormJoin .ImageSection {
+    max-width: 100%;
+  }
+}
+
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}

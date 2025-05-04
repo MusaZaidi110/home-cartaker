@@ -1,0 +1,13 @@
+input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-error {
+  border-color: #ff4d4f;
+}

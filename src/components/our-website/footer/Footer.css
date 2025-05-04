@@ -1,0 +1,10 @@
+.endText {
+  background: #4a89dc;
+  margin-top: 49px;
+  color: #fff;
+  padding: 8px 0;
+}
+.endText p {
+  padding: 0 20px;
+  font-size: 13px;
+}
