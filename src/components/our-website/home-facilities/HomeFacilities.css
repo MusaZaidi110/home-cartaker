@@ -1,0 +1,58 @@
+.facility {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.facility-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.facility-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.facility-icon {
+  position: relative;
+  display: inline-block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 2px solid#4a89dc;
+  z-index: 1;
+  margin-bottom: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.facility-icon::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0.7rem;
+  background-color: #4a89dc2d;
+  z-index: -1;
+}
+
+.facility-icon svg {
+  font-size: 2rem;
+  color: #4a89dc;
+  transition: all 500ms ease-in-out;
+}
+.facility-box:hover svg {
+    transform: rotateY(180deg);
+}
+.facility-box p{
+    font-size: 16px;
+    font-weight: 800;
+
+}
