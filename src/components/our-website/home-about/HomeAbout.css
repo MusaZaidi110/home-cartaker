@@ -1,0 +1,166 @@
+/* Main container styles */
+.about-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Text content styles */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-title {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.highlight {
+  color: #4a89dc;
+  text-transform: uppercase;
+}
+
+.about-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Stats grid styles */
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 120px;
+}
+
+.stat-box {
+  border: 1px solid #4a89dc;
+  border-radius: 5px;
+  padding: 0.25rem;
+}
+
+.stat-content {
+  border: 1px solid #4a89dc;
+  border-radius: 5px;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.stat-count {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #a7a7a7;
+}
+
+.stat-text {
+  margin: 0;
+  color: #a7a7a7;
+}
+
+.stat-box:hover .stat-count,
+.stat-box:hover .stat-text{
+    color: #333;
+}
+
+.about-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #4a89dc;
+}
+/* Image grid styles */
+.about-images {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image-col {
+  flex: 1;
+  min-width: calc(50% - 0.5rem);
+}
+
+.image-col-right {
+  text-align: right;
+}
+
+.image-col-left {
+  text-align: left;
+}
+
+.about-img {
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.about-img:hover {
+  transform: scale(1.03);
+}
+
+.about-img-1 {
+  width: 75%;
+  margin-top: 25%;
+}
+
+.about-img-2 {
+  width: 100%;
+}
+
+.about-img-3 {
+  width: 50%;
+}
+
+.about-img-4 {
+  width: 75%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .stat-item {
+    min-width: calc(33.333% - 1rem);
+  }
+
+  .image-col {
+    min-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-item {
+    min-width: calc(50% - 1rem);
+  }
+}
