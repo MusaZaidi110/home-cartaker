@@ -207,3 +207,7 @@ textarea {
   resize: vertical;
   min-height: 100px;
 }
+
+.input-wrapper {
+  width: 100% !important;
+}

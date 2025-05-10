@@ -1,15 +1,24 @@
+// services/common/ProtectedRoute.jsx
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "./AuthProvider";
+import { CircularProgress } from "@mui/material";
 
-const ProtectedRoute = ({ element }) => {
-  // Safely retrieve auth data
-  const authData = window.auth?.getAuthData();
+export const ProtectedRoute = ({ children, allowedRoles }) => {
+  const { isAuthenticated, role, isLoading } = useAuth();
+  const location = useLocation();
 
-  // Check if authData exists and if the user is authenticated
-  const isAuthenticated = authData?.isAuthenticated;
+  if (isLoading) {
+    return <div><CircularProgress /></div>; // Or a proper loading spinner
+  }
 
-  // Redirect to login if not authenticated
-  return isAuthenticated ? element : <Navigate to="/" replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
+
+  if (!allowedRoles.includes(role)) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
 };
-
-export default ProtectedRoute;

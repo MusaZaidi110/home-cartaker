@@ -1,70 +1,98 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext, useContext, useCallback, useMemo } from "react";
 
-const ONE_DAY = 24 * 60 * 60 * 1000; // 1 day in milliseconds
-const NINETY_DAYS = 90 * 24 * 60 * 60 * 1000; // 90 days in milliseconds;
+// Constants
+const ONE_DAY = 24 * 60 * 60 * 1000;
+const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
+const NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+
+// Create context
+const AuthContext = createContext();
+
+// Memoized default state
+    const getDefaultAuthState = () => ({
+        isAuthenticated: false,
+        token: null,
+        role: null,
+        userData: null
+    });
 
 export const AuthProvider = ({ children }) => {
     const [authData, setAuthData] = useState(() => {
-        const storedData = localStorage.getItem("authData");
-        if (storedData) {
-            const parsedData = JSON.parse(storedData);
-            // Check if expiration is set and handle accordingly
-            if (parsedData.expiration) {
-                const expirationDuration = parsedData.expiration === "1 Day" ? ONE_DAY : NINETY_DAYS;
-                if (Date.now() > parsedData.savedAt + expirationDuration) {
-                    // Clear expired data
-                    localStorage.removeItem("authData");
-                    return { isAuthenticated: false, token: null, user: null };
+        try {
+            const storedData = localStorage.getItem("authData");
+            if (storedData) {
+                const parsedData = JSON.parse(storedData);
+                
+                // Handle expiration
+                if (parsedData.expiration && parsedData.savedAt) {
+                    const expirationDuration = parsedData.expiration === "1 Day" ? ONE_DAY : 
+                                           parsedData.expiration === "30 Days" ? THIRTY_DAYS : NINETY_DAYS;
+                    
+                    if (Date.now() > parsedData.savedAt + expirationDuration) {
+                        localStorage.removeItem("authData");
+                        return getDefaultAuthState();
+                    }
                 }
+                return parsedData;
             }
-            return parsedData;
+        } catch (error) {
+            console.error("Failed to parse auth data", error);
+            localStorage.removeItem("authData");
         }
-        return { isAuthenticated: false, token: null, user: null };
+        return getDefaultAuthState();
     });
 
-    const [rememberMe, setRememberMe] = useState(false);
-
-    // Save authData to localStorage whenever it changes
+    // Save to localStorage only when necessary
     useEffect(() => {
         if (authData.isAuthenticated) {
-            const expiration = rememberMe ? "90 Days" : "1 Day";
             localStorage.setItem(
                 "authData",
                 JSON.stringify({
                     ...authData,
-                    expiration,
-                    savedAt: Date.now(), // Store the time of saving for expiration check
+                    expiration: "30 Days",
+                    savedAt: Date.now(),
                 })
             );
         } else {
             localStorage.removeItem("authData");
         }
-    }, [authData, rememberMe]);
+    }, [authData]);
 
-    const login = (token, user, remember) => {
-        setRememberMe(remember); // Track Remember Me checkbox
+    // Memoized login function
+    const login = useCallback((token, role, userData) => {
         setAuthData({
             isAuthenticated: true,
             token,
-            user,
+            role,
+            userData
         });
-    };
+    }, []);
 
-    const logout = () => {
-        setAuthData({
-            isAuthenticated: false,
-            token: null,
-            user: null,
-        });
+    // Memoized logout function
+    const logout = useCallback(() => {
+        setAuthData(getDefaultAuthState());
         localStorage.removeItem("authData");
-    };
+    }, []);
 
-    // Expose auth management functions globally via localStorage
-    window.auth = {
+    // Memoized context value to prevent unnecessary re-renders
+    const contextValue = useMemo(() => ({
+        ...authData,
         login,
-        logout,
-        getAuthData: () => JSON.parse(localStorage.getItem("authData")),
-    };
+        logout
+    }), [authData, login, logout]);
 
-    return <>{children}</>;
+    return (
+        <AuthContext.Provider value={contextValue}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
+
+// Custom hook for consuming auth context
+export const useAuth = () => {
+    const context = useContext(AuthContext);
+    if (!context) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
 };

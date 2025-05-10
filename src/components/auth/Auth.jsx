@@ -5,13 +5,17 @@ import {
     faFacebookF
 } from '@fortawesome/free-brands-svg-icons';
 import './Auth.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from '../../elements/button/Button';
 import Input from '../../elements/input/Input';
+import AuthService from '../../services/ApiServices/AuthService';
+import { useAuth } from '../../services/common/AuthProvider';
 
 const Auth = () => {
+    const {login} = useAuth();
+    const navigate = useNavigate();
     const [isActive, setIsActive] = useState(true);
     const [signUpErrors, setSignUpErrors] = useState({});
     const [signInErrors, setSignInErrors] = useState({});
@@ -101,11 +105,27 @@ const Auth = () => {
         }
 
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const { email, password } = formData;
+            const response = await AuthService.validateUser({ email, password });
+            console.log(response);
+            // Storing UserData and Role and JWT in Context
+            login(response.data.token, response.data.userData.roleName, response.data.userData);
 
             toast.success('Logged in successfully!');
             // Redirect or handle successful login here
+            switch (response.data.userData.roleName) {
+                case 'user':
+                    navigate('/user/dashboard');
+                    break;
+                case 'vendor':
+                    navigate('/vendor/dashboard');
+                    break;
+                case 'admin':
+                    navigate('/admin/dashboard');
+                    break;
+                default:
+                    navigate('/');
+            }
         } catch (error) {
             toast.error('Login failed. Please check your credentials.');
             console.error('Sign in error:', error);
@@ -125,7 +145,7 @@ const Auth = () => {
                 draggable
                 pauseOnHover
                 theme="colored"
-              />
+            />
             <div className={`container ${isActive ? 'active' : ''}`}>
                 {/* Sign Up Form */}
                 <div className="form-container sign-up">

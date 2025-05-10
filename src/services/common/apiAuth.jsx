@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:3000/", // Replace with your API's base URL
+  baseURL: "http://localhost:8000/", // Replace with your API's base URL
   timeout: 10000, // Timeout for requests
 });
 
@@ -10,7 +10,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     // Exclude login/signup API from attaching the token
-    const excludedEndpoints = ["/login/patient", "/login/staff"]; // Add all paths that don't require a token
+    const excludedEndpoints = ["/auth/validate-user"]; // Add all paths that don't require a token
 
     // Check if the endpoint is excluded
     if (!excludedEndpoints.some((endpoint) => config.url.includes(endpoint))) {

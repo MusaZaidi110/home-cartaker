@@ -400,7 +400,7 @@ const RequestServiceForm = () => {
                                 <li>Track all your service requests in one place</li>
                                 <li>Get notified about exclusive deals</li>
                             </ul>
-                            <Button text={'Sign Up Now'} onClick={() => navigate('/auth')} />
+                            <Button text={'Sign Up Now'} onclick={() => navigate('/auth')} />
                             <p className="loyalty-text">
                                 Loyal users enjoy <span className="highlight">extra benefits</span> and stay updated with all our latest offers!
                             </p>

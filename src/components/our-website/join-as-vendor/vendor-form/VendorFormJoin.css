@@ -161,6 +161,9 @@
   right: 101px;
   transform: rotate(22deg);
 }
+.input-wrapper {
+  width: 100% !important;
+}
 
 @media screen and (max-width: 768px) {
   .VendorFormJoin .FormSection h1 {
