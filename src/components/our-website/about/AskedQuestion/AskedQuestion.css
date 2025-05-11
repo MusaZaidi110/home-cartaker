@@ -80,7 +80,10 @@
 .accordion .accordionSummary:hover{
   transform: translateY(0px) !important;
   border: none !important;
+  background-color: transparent !important;
+  border: none !important;
 }
+
 
 .accordionHeading {
   color: #1e1e1e !important;

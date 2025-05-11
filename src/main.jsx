@@ -30,7 +30,7 @@ const AdminDashboard = React.lazy(() => import('./components/admin-dashboard/Adm
 // Protected Route Limitation
 import { ProtectedRoute } from './services/common/ProtectedRoute';
 import { AuthRoute } from './components/auth/AuthRoute';
-import { CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 
 // Create role-based protected routes
 const createProtectedRoutes = (role, LayoutComponent, dashboardComponent, additionalRoutes = []) => ({
@@ -46,6 +46,26 @@ const createProtectedRoutes = (role, LayoutComponent, dashboardComponent, additi
     ...additionalRoutes
   ]
 });
+
+const FullPageSpinner = () => (
+  <Box
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh', // Full viewport height
+      width: '100vw', // Full viewport width
+    }}
+  >
+    <CircularProgress 
+      size={80} // Increased size
+      thickness={7} // Optional: makes the progress thicker
+      sx={{
+        color: 'primary.main' // Optional: uses your theme's primary color
+      }}
+    />
+  </Box>
+);
 
 const router = createBrowserRouter([
   {
@@ -78,7 +98,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<FullPageSpinner />}>
       <RouterProvider router={router} />
     </Suspense>
   </React.StrictMode>

@@ -14,7 +14,7 @@ import AuthService from '../../services/ApiServices/AuthService';
 import { useAuth } from '../../services/common/AuthProvider';
 
 const Auth = () => {
-    const {login} = useAuth();
+    const { login } = useAuth();
     const navigate = useNavigate();
     const [isActive, setIsActive] = useState(true);
     const [signUpErrors, setSignUpErrors] = useState({});
@@ -22,7 +22,8 @@ const Auth = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        roleName: "user"
     });
 
     const validateSignUpForm = () => {
@@ -84,15 +85,15 @@ const Auth = () => {
         }
 
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-            toast.success('Account created successfully!');
-            setFormData({ name: '', email: '', password: '' });
-            setIsActive(false); // Switch to sign in after successful registration
+            const response = await AuthService.createUserAuth(formData);
+            if (response.success) {
+                toast.success('Account created successfully!');
+                setFormData({ name: '', email: '', password: '' });
+                setIsActive(false);
+            }
         } catch (error) {
-            toast.error('Registration failed. Please try again.');
-            console.error('Sign up error:', error);
+            const errorMessage = error.response?.data?.message || 'Registration failed';
+            toast.error(errorMessage);
         }
     };
 
@@ -107,11 +108,11 @@ const Auth = () => {
         try {
             const { email, password } = formData;
             const response = await AuthService.validateUser({ email, password });
-            console.log(response);
+
             // Storing UserData and Role and JWT in Context
             login(response.data.token, response.data.userData.roleName, response.data.userData);
 
-            toast.success('Logged in successfully!');
+            toast.success(response.message);
             // Redirect or handle successful login here
             switch (response.data.userData.roleName) {
                 case 'user':
@@ -127,8 +128,8 @@ const Auth = () => {
                     navigate('/');
             }
         } catch (error) {
-            toast.error('Login failed. Please check your credentials.');
-            console.error('Sign in error:', error);
+            const errorMessage = error.response?.data?.message || 'Authentication failed';
+            toast.error(errorMessage);
         }
     };
 
